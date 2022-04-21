@@ -11,8 +11,20 @@ Look below to see how this function is invoked:
 
 function interrupter(interpretingWord){
 
-  // return function(sentence)
-  
+  return function(sentence){
+    let split = sentence.split(' ');
+    let newSent = [];
+
+    for(let i = 0; i < split.length; i++){
+      let word = split[i];
+      if (i < split.length-1){
+        newSent.push(word + ' ' + interpretingWord)
+      } else {
+        newSent.push(word);
+      }
+    }
+    return newSent.join(' ');
+  }
 }
 
 
@@ -21,7 +33,7 @@ console.log(rudePerson("how are you")); // prints "how what are what you"
 console.log(rudePerson("I like pie")); // prints "I what like what pie"
 
 
-Invoking the interrupter function again:
+//Invoking the interrupter function again:
 let rudePerson2 = interrupter("yo"); // => returns a function
 console.log(rudePerson2("I love dogs")); // prints "I yo love yo dogs"
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

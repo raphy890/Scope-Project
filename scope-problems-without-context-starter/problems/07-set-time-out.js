@@ -12,19 +12,28 @@ Examples:
 
 
 ***********************************************************************/
-// your code here!
-function funcTimer(time, func) {
-  setTimeout (function( ){
-    func()}, time)
-}
+// WITH CB FUNCTION
+
+    // function funcTimer(time, func) { // time = time, func = callback function
+
+    //   setTimeout (func, time) // passes our callback function after the time
+    // }
+
+    // funcTimer(5000, func); // in 5 seconds prints: "Party time!"
 
 
 
-function partyFunc () {
-  console.log("Party time!")
-}
 
-funcTimer(5000, partyFunc); // in 5 seconds prints: "Party time!"
+// WITHOUT CB FUNCTION, JUST PASSING IN THE CODE FROM FUNC
+
+    function funcTimer(time) { // time = time, func = callback function
+
+      setTimeout (function() {
+        console.log("Party time!")
+      }, time) // passes our callback function after the time
+    }
+
+    funcTimer(5000); // in 5 seconds prints: "Party time!"
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

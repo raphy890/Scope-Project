@@ -7,12 +7,23 @@ When invoked the function returned by hiddenCounter will increment the counter b
 
 ***********************************************************************/
 // your code here!
-function hiddenCounter() {
+// function hiddenCounter() {
 
+//   let count = 0;
+//   return () => (count +=1)
+
+// }
+
+
+function hiddenCounter(){
   let count = 0;
-  return () => (count +=1)
-
+  function counter() {
+    count ++
+    return (count)
+  }
+  return counter
 }
+
 
 let hidden1 = hiddenCounter(); //returns a function
 

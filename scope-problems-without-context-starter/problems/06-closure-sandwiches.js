@@ -17,26 +17,25 @@ sandwich2("pb") // => "One sandwich with tomato and pb"
 
 ***********************************************************************/
 
-const sandwichMaker = ing => {
+const sandwichMaker = () => {
   let start = "One sandwich with tomato"
-  console.log(sandwichMaker)
 
-  return function addTopping(){
-    start +=  "and" + addTopping;  //start = start "and" + addTopping
+  return function addTopping(ing){
+    start +=  " and " + ing;  //start = start "and" + addTopping
     return start;
   };
 
 };
 
 
-// let sandwich = sandwichMaker(); // => returns a function
-// sandwich("spinach") // => "One sandwich with tomato and spinach"
-// sandwich("jelly") // => "One sandwich with tomato and spinach and jelly"
-// sandwich("bread") // => "One sandwich with tomato and spinach and jelly and bread"
+let sandwich = sandwichMaker(); // => returns a function
+console.log(sandwich("spinach")) // => "One sandwich with tomato and spinach"
+console.log(sandwich("jelly")) // => "One sandwich with tomato and spinach and jelly"
+console.log(sandwich("bread")) // => "One sandwich with tomato and spinach and jelly and bread"
 
-// //Another Sandwich:
-// let sandwich2 = sandwichMaker(); // => returns a function
-// sandwich2("pb") // => "One sandwich with tomato and pb"
+//Another Sandwich:
+let sandwich2 = sandwichMaker(); // => returns a function
+sandwich2("pb") // => "One sandwich with tomato and pb"
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
